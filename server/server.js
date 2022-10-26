@@ -21,6 +21,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  persistedQueries: false,
 });
 
 // initialize express
@@ -50,11 +51,10 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
   db.once("open", () => {
     app.listen(PORT, () => {
-      console.log("env: ", process.env);
       console.log(`API server running on port ${PORT}!`);
       // log where we can go to test our GQL API
       console.log(
-        `Use GraphQL at https://damp-atoll-91160.herokuapp.com/:${PORT}${server.graphqlPath}`
+        `Use GraphQL at https://localhost/:${PORT}${server.graphqlPath}`
       );
     });
   });
