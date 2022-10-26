@@ -20,7 +20,7 @@ db.once("open", async () => {
 
   const createdUsers = await User.collection.insertMany(userData);
 
-  console.log(userData, createdUsers);
+  console.log(createdUsers.ops);
 
   // create friends
   for (let i = 0; i < 100; i += 1) {
