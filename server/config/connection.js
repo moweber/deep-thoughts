@@ -1,10 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const mongoUri = process.env.MONGODB_URI;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts', {
+console.log();
+mongoose.connect(mongoUri || "mongodb://localhost/deep-thoughts", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false
+  useFindAndModify: false,
 });
 
 module.exports = mongoose.connection;
