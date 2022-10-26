@@ -14,7 +14,6 @@ const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 
 // define fallback port
-console.log(process.env);
 const PORT = process.env.PORT || 3001;
 
 // create a new Apollo server and pass in our schema data
