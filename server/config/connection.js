@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongoUri = process.env.MONGODB_URI;
 
-console.log();
+console.log("whoops", mongoUri);
 mongoose.connect(mongoUri || "mongodb://localhost/deep-thoughts", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
